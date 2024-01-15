@@ -1,0 +1,25 @@
+/* 
+La propiedad overflow determina la visivilidad del contenido que desborde del contenedor
+
+overflow tiene las siguientes propiedades
+    visible
+    hidden(oculta el contenido desbordado)
+    auto(crea scroll de ser necesario)
+    scroll(crea scroll siempre)
+
+   Novedades en  CSS3
+        overflow-x
+        overflow-y
+    Ademas se pueden pasar dos valores de overflow
+    overflow:valorx valory
+*/
+.container{
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    overflow: auto hidden;
+}
+p{
+    width: 400px;
+    font-size: 1.4em;
+}

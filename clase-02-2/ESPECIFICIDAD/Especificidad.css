@@ -1,0 +1,55 @@
+/*
+HERENCIA:
+El valor ingherit fuerza un elemento a heredar la propiedad
+correspondiente de su ancestro mas cercano
+*/
+
+p{
+    color: purple;
+}
+a{
+    color: inherit;
+}
+li{
+    color: red;
+}
+/*
+Especificidad
+
+Es un valor que adquieren los selectores y que determina que regla css o que estilo
+se aplicna a un elemento cuando existen conflictos
+
+important siempre gana sobre cualquier especificidad por eso eso que es una mala practicas
+
+important>especificidad>cascada
+Como se calcula la especificidad?
+
+Etiqueta ->1
+Clases y seudoclases ->10
+ID->100
+Estilos en linea->1000
+*/
+html body p.parrafo#parrafo{
+    color: peru;
+}
+body p.parrafo#parrafo{
+    color: salmon;
+}
+P.parrafo#parrafo{
+    color: skyblue;
+}
+.parrafo#parrafo{
+    color: aqua;
+}
+p#parrafo{
+    color: red;
+}
+.parrafo{
+   color: green;
+}
+#parrafo{
+    color: seagreen;
+}
+p{
+    color: orange ;
+}

@@ -1,0 +1,56 @@
+/* 
+Selector universal es un *
+y selecciona a todos los elementos
+el uso mas comun actualmente es:
+
+*{
+    box-sizing:border-box;
+}
+*/
+
+/* 
+Selecotres hermanos (dos tipos):
+    1.Hermano siguiente(singular) a+b
+        B esta justo despues de A.Se selecciona B obviamente
+    2.Hermanos siguientes(plural) a~b
+        B o varios B estan despues de A no importa si entre ellos estan otros
+        elementos
+*/
+h1~p{
+    color: red;
+}
+h2+div p{
+    color: aqua;
+}
+/* 
+Selectores de atributos
+un atributo se selecciona entre corchetes
+se puede indicar solo el atributo o el atributo y su valor
+*/
+[class]{
+    color: red;
+}
+[target="_blank"]{
+    font-style: italic;
+}
+/* Los selectores de atributos aceptan comodines
+    
+    $->termina con
+    ^->comienza con
+    *->contiene a
+    ejemplo:
+    [src$="jpg"]
+    [href^="http://"]
+    [class*="icon-"]
+*/
+img{
+    max-width: 100%;
+    height: auto;
+    /* border: 2px solid black; */
+}
+[src$="png"]{
+    border: 2px solid black;
+}
+[class*="parrafo"]{
+    color: yellow;
+}

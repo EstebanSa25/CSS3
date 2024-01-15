@@ -1,0 +1,40 @@
+.main-banner{
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:linear-gradient($color1,$color3);
+        opacity: .3;
+    }
+    .imagen-banner{
+        width: 100%;
+        display: block;
+        position: relative;
+        margin: 0;
+    }
+    .banner__content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 100;
+    }
+    .banner__content{
+        width: 90%;
+      .titulo{
+        margin: 0;
+        @include titulos(1.4em,$white)
+      }
+      .parrafo{
+        margin-top: .2em;
+        @include parrafos(1.2em,$white,$normal)
+      }
+    }
+}

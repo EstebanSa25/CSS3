@@ -1,0 +1,110 @@
+/*
+TEXTOS
+los tipos de letra en el mundo profesional
+se conocen como familias de fuente o tipografia
+
+Familias tipograficas
+    Son fuentes especificas con nombres comerciales,
+        ejemplo arial,verdana,Times New Roman,helvetica,Ubuntu.
+Familias genericas
+    Son grupos de fuentes segun sus caracteristicas.
+    Serif
+        Con adorno(serifa) en los remates
+    sans-serif
+        Sin adorno en los rematges (de palo seco)
+    cursive
+        Letras inclinadas()
+    monospace
+        Ideal para escribir codigo
+Si se asigna una familia tipografica en un estilo,esta debera estar instalada en el
+sistema operativo del cliente si no no lo vera.
+
+Dos maneras de soluciionarlo
+1.Definir fuentes alternativas.
+    Se separan por comas,si la primera no es encontrada se busca la segunda y asi sucesivamente,
+    Se recomienda terminar con una fuente generica
+Si el nombre de una fuente tiene mas de una palabra se debe encerrar entre comillas.
+ej:
+
+p{
+    font-family:"Times New Roman",serif;
+}
+2.Usar un proveedor de fuentes en internet(google fonts y adobe typekit)
+    https://fonts.google.com/
+3.Almacenar las fuentes en un servidor propio
+    */
+h1,p{
+    font-family: 'Ubuntu',sans-serif;
+    font-weight: normal;
+    color: white;
+}
+
+body{
+    background-color: black;
+    margin: 0;
+}
+/*
+Tama;os de las fuentes
+Unidades de medida para definir el tama;o de la fuente
+
+px ->tama;o absoluto
+em ->tama;o relativo al contexto
+rem ->tama;o relativo al <html>
+% ->tama;o normald e una fuente
+vh -> 1vh=1% del alto del viewport
+vw ->1vh=1% del ancho del viewport
+
+*/
+h1{
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+p{
+    color: white;
+    font-size: 2em;
+}
+p span{
+    font-size: 2rem;
+}
+li{
+    text-align: lefts;
+    color: white;
+    font-size: .7rem;
+}
+span{
+    color: white;
+    font-family: 'Ubuntu';
+    font-size: 50vh;
+    line-height: 100vh;
+    text-align: center;
+    display: block;
+}
+
+/*
+Otras propiedades de los textos:
+Line-height :determina la altura de la linea
+*/
+/* El body por defecto tiene un font-size de 16px */
+
+p{
+    line-height: 1.5;
+    text-indent: 100px;
+}
+div{
+    width: 300px;
+    height: 100px;
+    background: yellow;
+    font-size: 3em;
+    text-align: center;
+    line-height: 100px;
+}
+
+/*
+text-transform:lowercase|uppercase|capitalize;
+text-align:center|left|right|justify
+Font-weight: Bold|normal;
+font-style:italic|normal;
+text-decoration:underline-none;
+letter-spacing:value;(con una unidad determina la separacion de las letras)
+text-indent:mueve la primera linea de un  bloque de texto;
+*/

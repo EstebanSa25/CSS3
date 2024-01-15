@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #333;
+}
+h1,h2,h3,h4{
+    color: darken(steelblue,10);
+}
+
+// $size:24px;
+// [class^="icon"]{
+// width: $size;
+// height: $size;
+// background: url();
+// }
+// @for $i from 1 through 50{
+//     .icon-#{i}{
+//         background-position: 0(-$size*$i);
+//     }
+// }
+pre{
+    background-color: lightgray;
+    border: 1px solid rgba(#000,.1);
+    padding: .5em 1em;
+    font-size: 1.2em;
+}
+.padre{
+    font-size: 2em;
+    .hijo{
+        font: {
+            size:.8em;
+            weight:normal;
+            family:sans-serif;
+            style:italic;
+        }
+        border: {
+            width: 2px;
+            color: green red yellow;
+            radius:10px
+        }
+    }
+}
+a{
+    color: red;
+
+    &:hover{
+        color: green;
+    }
+}
+.menu{
+    list-style: none;
+    &__item{
+        display: inline-block;
+    }
+    &__link{
+        display: block;
+    }
+    footer &{
+        background: #000;
+    }
+    &.secundario{
+        font-size: .8em;
+    }
+}
+// @import "modulo1";
+// @import "modulo2";
+@mixin reset-menu($color,$font-size){
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    background-color: $color;
+    font-size: $font-size;
+}
+.menu{
+    @include reset-menu(green,.9em)
+}
+
+.sociales{
+    display: inline-block;
+    line-height: 3rem;
+    padding: 0 2em;
+    &--footer{
+    @extend .sociales;
+background-color: red;
+    }
+}
+
+%button{
+    display: inline-block;
+    line-height: 2;
+    padding: 0 1em;
+}
+.button{
+    @extend %button;
+}
+
+
+/* ^=comienza con
+    *=contiene
+    $=termina
+*/

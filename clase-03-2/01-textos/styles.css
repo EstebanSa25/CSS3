@@ -1,0 +1,70 @@
+/* 
+La propiedad abreviada (shorthand) "font"
+
+la propiedad font agrupa a las siguientes propiedades
+
+    font-weight
+    font-style
+   * font-size/line-height
+   *font-family
+    
+es obligatorio que esten almenos font-size y font family 
+y font family siempre al final
+Por otro lado si se incluye line height debe ir despues de font-size y separado
+por un (/)
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+    font-style: italic; 
+
+
+    font: bold italic 2em /3em verdana,sans-serif;
+}
+ */
+h1{
+    font: bold normal 1.5em/2.5em georgia,serif;
+}
+/* 
+Controlar el flujo y espaciado de los textos
+separacion de letras y plabaras
+letter-spacing
+word-spacing
+
+word-break:break-all|keep-all|none;
+corta las palabras donde termina el contenedor
+
+    word-wrap: break-word;
+    white-space:pre
+        Controla los espacios en blanco y espacios de linea
+        y se coloca normal los ignara y pre los trata como <pre>
+        nowrap hay saltos de linea y espacios
+        pre-wrap igual que el pre pero permite saltos de linea al final del contenedor
+        pre-line
+            respeta los saltos de linea pero omite los espacios
+*/
+div{
+    width: 250;
+    background-color: yellow;
+}
+div{
+    /*letter-spacing: .03em;
+    word-spacing: .5em;
+    */
+    /* text-align: justify;
+    word-break: break-all; */
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.pre{
+    white-space: pre-line;
+}
+.code{
+    width: 300px;
+    white-space: pre-wrap;
+    background-color: yellow;
+    /* word-wrap: break-word; */
+    text-overflow:ellipsis;
+    overflow: auto;
+}

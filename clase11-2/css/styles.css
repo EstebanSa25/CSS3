@@ -1,0 +1,23 @@
+code {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  padding: 1em;
+  background: rgba(173, 216, 230, 0.5);
+  font-size: 1.4em;
+  color: #333;
+}
+
+header {
+  background: red;
+}
+@media screen and (min-width: 400px) {
+  header {
+    background: yellow;
+  }
+}
+@media screen and (min-width: 800px) {
+  header {
+    background: green;
+  }
+}

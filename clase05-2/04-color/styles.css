@@ -1,0 +1,21 @@
+/* 
+El color se puede indicar de varias formas
+    1.Palabras clave
+        En CSS3 son 147 palabras clave para colores
+    
+    2.Hexadecimal
+        los valores van de 0 a f
+        Los valores van en pares(RRGGBB)
+        Comienzan con #
+        Si los 2 valores de cada pareja son iguales
+        se puede abreviar
+        #55ff33=5#ff3
+    3.rgb() y rgba()
+        Se indican los tres canales(red,green,blue)
+        en valores de 0 a 255.para el caso de rgba()
+        existe un cuarto canal(al)
+*/
+body{
+    background-color: #ff2355;
+    background: rgba(255, 0, 0, .5);
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 11-Responsive web design</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   <h1>Responsive Web Design(RWD)</h1>
+   <p>Es una metodologia de trabajo que busca que
+    tanto el layout como el contenido de una pagina o aplicacion
+    se vea correctamente en cualquier tama;o de viewport
+   </p>
+   <p>No existen propiedades de CSS especificas para responsive Design
+    por lo tanto,RWD es un conjunto de practicas :
+   </p>
+   <ul>
+    <li>Mobile firts (comenzar dise;ando la version movil e ir subiendo de tamaño</li>
+    <li>Content firts(tener el cuenta el contenido para aplicar cambios segun el tamaño de pantalla</li>
+   </ul>
+   <h2>Meta viewport</h2>
+   <p>Es un tipo de meta introducido por Apple que le dice al navegador
+    como interpretar las dimensiones de la pagina respecto a las dimensiones del viewport
+   </p>
+   <p>El meta viewport no tiene ningun efecto en navegadores de escritorio</p>
+   <code>
+    &lt;meta name="viewport"
+         content="width=device-width, initial-scale=1.0"&gt;
+   </code>
+   <h2>Media Queries</h2>
+   <p>Son reglas (at-rules) que permiten condicionar los estilos siempre que se cumplan ciertas condiciones.Inicialmente se usan para identificar los tipos de medios
+    (impresora,print;pantalla,screen)pero tambien pueden identificar tamaño del viewport,orientacion del dispositivo o densidad de pixeles.
+   </p>
+   <pre>
+    <code>
+        @media screen {
+            body{
+                background: #000;
+                color: #fff;
+            }
+        }
+        @media print{
+            body{
+                background: #fff;
+                color:#333;
+            }
+        }
+        @media all{
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+    </code>
+   </pre>
+   <p>Las condiciones se unen con el operador and</p>
+   <pre>
+    <code>
+        @media print and (min-width:200px){
+            body{
+                color: red;
+            }
+        }
+    </code>
+   </pre>
+   <p>Las condiciones pueden usar las comas como el operador logico or</p>
+   <pre>
+    <code>
+        @media print,(min-width:200px){
+            body{
+                color: red;
+            }
+        }
+    </code>
+   </pre>
+   <p>Tambien se puede detectar la orientacion del dispositivo:</p>
+   <pre>
+    <code>
+        @media screen and (orientation:portrait){
+            //dispositivo en vertical
+        }
+        @media screen and (orientation:landscape){
+            //dispositivo en horizontal
+        }
+    </code>
+   </pre>
+   <h2>Breakpoints</h2>
+   <p>Son medidas relativas al ancho del viewport en las que se cambia el diseño
+    Existen dos tipos:
+   </p>
+   <ul>
+    <li>Major Breakpoints(para cambios mayores como layout)</li>
+    <li>Minor Breakpoints(para cambios pequeños) se definen sobre el desarrollo del proyecto</li>
+   </ul>
+   <p>Los breakpoints se combinan con las media queries</p>
+   <p>Es mas usual construir las media queries usando los breakpoints como min widht e ir subiendo de tamaño</p>
+   <h2>Sass para RWD</h2>
+   <p>Las media queries se pueden anidar al selector</p>
+   <pre>
+<code>
+        body{
+            background-color: red;
+            @media screen and (min-width:400px){
+                background-color: green;
+            }
+            @media screen and (min-width:700px){
+                background-color: yellow;
+            }
+            @media screen and (min-width:1000px){
+                background-color: purple;
+            }
+        }
+</code>
+   </pre>
+   <p>otra forma en la que Sass ayuda al RWD es que se pueden crear mixins
+    para simplificar las media queries
+   </p>
+   <pre>
+    <code>
+        @mixin desde($size){
+            @media screen and (min-width:$size){
+                @content;
+            }
+            @mixin hasta($size){
+                @media screen and (max-width:$size){
+                    @content;
+                }
+                }
+            }
+            @mixin desde-hasta($desde,$hasta){
+                @media screen and (min-width:$desde) and (max-width:$hasta){
+                    @content;
+                }
+                }
+
+            header{
+                background: red;
+                @include desde(400px){
+                    background: yellow;
+                }
+                @include desde(800px){
+                    background: green;
+                }
+            }
+    </code>
+   </pre>
+   <h2>Resolucion vs viewport</h2>
+   <p>La Resolucion la cantidad de pixeles fisicos en una pantalla(ancho x alto)
+    mientras que el viewport es el tamaño real que existe para diseñar.
+    Generalmente ambos conceptor coincidian.
+    pero cambia a partir del iphone 4 y el retina Display
+   </p>
+</body>
+</html>

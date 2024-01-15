@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Clase 10-Gulp y Sass</h1>
+    <h2>Preparar el entorno para trabajar con Gulp</h2>
+    <ol>
+        <li>
+            Instalar NodeJS
+        </li>
+        <li>Instalar NodeJS (nodejs.org)</li>
+        <li>instalar git(opcional, pero recomendado en windows)</li>
+        <li>Revisar que Node se instalo correctamente(comando "node -v")</li>
+        <li>Inicializar el proyecto escribiendo en terminal "npm init"(este comando crea el package.json)
+            <em>*Solo se requiere si es que se esta creando un proyecto desde cero y no tiene el package.json en caso contrario
+                se usa "npm install"
+            </em>
+        </li>
+        <li>Instalar Gulp
+            <ul>
+                <li>1.Globalmente (solo la primera vez) "npm install gulp -g"</li>
+                <li>2.Comprobar que esta instalado Gulp "gulp -v"</li>
+                <li>3.Instalarlo localmente en el proyecto "npm install gulp --save-dev"</li>
+            </ul>
+        </li>
+        <li>Crear el gulpfile.js en la raiz del proyecto.Este archivo contiene las instrucciones
+            para que gulp ejecute las tareas
+        </li>
+    </ol>
+    <h2>Sass</h2>
+<p>Es un preprocesador css que permite escribir
+    codigo css aprovechando las
+    funcionalidad de un lenguaje de programacion
+    como variables,funciones,scope,condicionales,etc.</p>
+    <h3>Variables</h3>
+    <p>Permiten almacenar valores en un contenedor y luego
+        llamarlos cuando sea necesario,se escriben con un signo de dolar al inicio y su valor se asigna con dos puntos (:)
+    </p>
+    <pre>
+        <code>
+    $size:20px;
+    div{
+        width:$size; //width:20px;
+        height:$size;//height:20px;
+    }
+        </code>
+    </pre>
+    <h3>Anidamiento (nesting)</h3>
+    <p>Se permiten poner selectores dentro de otros para 
+        representar unn selector decendiente
+    </p>
+<pre>
+<code>
+    .padre{
+        font-size: 2em;
+        .hijo{
+            font: {
+                size:.8em;
+                weight:normal;
+                family:sans-serif;
+                style:italic;
+            }
+            border: {
+                width: 2px;
+                color: green red yellow;
+                radius:10px
+            }
+        }
+    }
+</code>
+</pre>
+<p>tambien se puede referenciar al selector padre usando el signo "&"</p>
+<pre>
+<code>
+    .menu{
+        list-style: none;
+        &__item{
+            display: inline-block;
+        }
+        &__link{
+            display: block;
+        }
+        footer &{
+            background: #000;
+        }
+        &.secundario{
+            font-size: .8em;
+        }
+    }
+</code>
+</pre>
+<h3>Sass y Scss</h3>
+<p>Los archivos con las extension .sass
+    usan una sintaxis antigua que
+    no requeria punto y coma ni llaves
+    Mientras que los archivos .scss usan la sintaxis actual
+    (la anterior .sass ya no se desarrolla)
+    y son los recomendados
+</p>
+<p>para transformar un archivo
+.css a Sass basta con cambiarle la extension a .scss</p>
+<h3>Partials e @import</h3>
+<p>Los partials en Sass son los archivos que no deben
+    compilarse por que se importaran dentro de otro.
+    Por convencion esto se nombran comenzando con
+    un guion bajo
+</p>
+<p>Por lo general se acostumbra que un archivo sea el que importe a los demas con @import
+La sintaxis es la siguiente(no se necesita escribir el guion bajo ni la extension)</p>
+<pre>
+<code>
+@import "componentes/menu;" //_menu.scss
+@import "componentes/login" //_login.scss
+</code>
+</pre>
+
+<h3>Mixins</h3>
+<p>Son bloques de codigo que pueden recibir parametros</p>
+<h3>@extend y placeholder</h3>
+<p>@extend es para heredar propiedades de otra regla</p>
+<pre>
+<code>
+    .menu{
+        @include reset-menu(green,.9em)
+    }
+
+    .sociales{
+        display: inline-block;
+        line-height: 3rem;
+        padding: 0 2em;
+        &--footer{
+        @extend .sociales;
+    background-color: red;
+        }
+
+</code>
+</pre>
+<p>Un placeholder es un bloque de codigo reutilizable
+A diferencia de un mixin,un placeholder no recibe parametros.
+</p>
+<pre>
+<code>
+    %button{
+        display: inline-block;
+        line-height: 2;
+        padding: 0 1em;
+    }
+    .button{
+        @extend %button;
+    }
+</code>
+</pre>
+</body>
+</html>

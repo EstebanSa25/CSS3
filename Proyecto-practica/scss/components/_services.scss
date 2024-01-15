@@ -1,0 +1,70 @@
+.servicios{
+    display: flex;
+    flex-direction: column;
+    @include desde($tablet){
+        flex-direction: row;
+    }
+    align-items: center;
+    justify-content: center;
+    .servicio__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        height: 5em;
+        &:nth-child(1){
+            text-transform: uppercase;
+            background-color: $color1;
+            @include parrafos(1.5em,$white,$normal);
+        }
+        &:nth-child(2){
+            background-color: $color2;
+            @include parrafos(1.5em,$white,$normal);
+        }
+        &:nth-child(3){
+            background-color: $color3;
+            @include parrafos(1.5em,$color1,$normal);
+        }
+    }
+}
+.titulo-staff{
+    text-align: center;
+}
+.Staff-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include desde($tablet){
+        flex-direction: row;
+    }
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    .Staff-container__item{
+      
+        padding: 1em;
+        margin-bottom: 1em;
+        @include desde($tablet){
+            margin-right: 1em;
+        }
+        @include desde($computadora){
+            width: calc(24.5% - 1em);
+        }
+        .button-secundary{
+            font-size: .9em;
+        padding: .4em;
+        }
+        .persona-staff{
+            width: 70%;
+            border-radius: 50%;
+            border: 2px solid $color1;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid lightgray;
+    }
+}

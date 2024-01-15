@@ -1,0 +1,41 @@
+.body{
+    margin: 0;
+}
+.container{
+    border-bottom: 8px solid gray;
+    height: 100px;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transition: all 10s;
+    -webkit-transition: all 10s;
+    -moz-transition: all 10s;
+    -ms-transition: all 10s;
+    -o-transition: all 10s;
+    position: absolute;
+    left: 0;
+}
+.container:hover .box{
+    left: calc(100% - 100px);
+}
+button{
+    background-color: green;
+    color: #fff;
+    line-height: 3;
+    font-size: 1.3em;
+    border: none;
+    display: table;
+    margin: 2em auto;
+    padding: 0 1.5em;
+    transition: all .5s;
+}
+button:hover{
+    background-color: red;
+    transform:  scale(1.1);
+    -webkit-transform:  scale(1.1);
+    -moz-transform:  scale(1.1);
+    -ms-transform:  scale(1.1);
+    -o-transform:  scale(1.1);
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="/ejes/styles.css">
+</head>
+<body>
+    <h1>Ejes</h1>
+    <p>Cada vez que se define un flex container este adquiere
+        automaticamente 2 ejes:
+    </p>
+    <ul>
+        <li>Main axis (principal,horizontal por default)</li>
+        <li>Cross axis(secundario,vertical por default)</li>
+    </ul>
+    <p>De forma predeterminada los elementos(flex-items)
+        se alinean respecto al main axis.
+    </p>
+    <img src="/ejes/flexbox-axis.svg" alt="">
+    <div class="container-demo">
+        <div class="item-demo">1</div>
+        <div class="item-demo">2</div>
+        <div class="item-demo">3</div>
+        <div class="item-demo">4</div>
+    </div>
+    <p>La direccion de los ejes puede cambiarse con la propiedad flex-direction (aplicada al container)</p>
+    <pre>
+        .container-demo{
+            display:flex;
+            flex-direction:row-reverse;
+        }
+    </pre>
+    <p>Los valores para flex-direction son los siguientes:</p>
+    <ul>
+        <li>row(default,left to right)</li>
+        <li>row-reverse(right to left)</li>
+        <li>column(top to bottom)</li>
+        <li>column-reverse(bottom to top)</li>
+    </ul>
+<h2>Alinear elementos respecto al main-axis(horiz por default)</h2>
+<p>Se usa la propiedad justify-content</p>
+<ul>
+    <li>Flex-start(al inicio)</li>
+    <li>Flex-end(al final)</li>
+    <li>center(al medio)</li>
+    <li>space-beetween (divide el espacio sobrante y los distribuye entre los items)</li>
+    <li>space-around(divide el espacio sobrante y los distribuye al rededor de los items)</li>
+</ul>
+<div class="container-demo2">
+    <div class="item-demo">1</div>
+    <div class="item-demo">2</div>
+    <div class="item-demo">3</div>
+    <div class="item-demo">4</div>
+    <div class="item-demo">5</div>
+    <div class="item-demo">6</div>
+</div>
+<h2>Alinear los elementos respecto al cross-axis(vertical por default)</h2>
+<p>Para esto se usa la propiedad(del container): <strong> align-items </strong>
+    (cuando es una sola fila) y <strong>align-content</strong>(cuando son dos o mas filas)
+</p>
+<ul>
+    <li>stretch</li>
+    <li>Flex-start</li>
+    <li>Flex-end</li>
+    <li>Center</li>
+    <li>baseline</li>
+</ul>
+<div class="container-demo3">
+    <div class="item-demo">1</div>
+    <div class="item-demo">2</div>
+    <div class="item-demo">3</div>
+    <div class="item-demo">4</div>
+    <div class="item-demo">5</div>
+    <div class="item-demo">6</div>
+</div>
+<p>Cuando un elemento no tiene hihos y solo tiene texto
+    dentro,el texto se convierte en un flex item-item
+    si es que el elemento se convierte en flex-container
+</p>
+<div class="container-demo4">
+    <div class="item-demo">1</div>
+    <div class="item-demo">2</div>
+    <div class="item-demo">3</div>
+    <div class="item-demo">4</div>
+    <div class="item-demo">5</div>
+    <div class="item-demo">6</div>
+</div>
+</body>
+</html>

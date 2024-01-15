@@ -1,0 +1,63 @@
+/* 
+Las imagenes no tienen propiedades especificas en CSS.
+Por lo que vamos a dar algunos tips para su uso.
+
+1.Imagenes responsive
+Se recomienda siempre poner esta regla en el css
+
+img{
+    max-width:100%;
+    height:auto;0
+}
+
+otra opcion es 
+img{
+
+    width:100%;
+}
+2.Espacio debajo de las imagenes
+Las imagenes son inline por lo tanto,tienen un line height,para su solucion:
+*Al contenedor
+    line-height:0;
+*A la imagen misma 
+    display:block;
+3.Centrado de las imagenes
+    Dos metodos:
+    *Hacer que la imagen sea block y usar margenes automaticos
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+*Aplicarle al contenedor:
+text-aling:center(siempre que la imagen no sea block)
+4. Centrado vertical respecto a un texto
+*/
+*{
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+.img-container{
+    background-color: yellow;
+    margin-bottom: 1em;
+    line-height: 0; 
+}
+.img-container img{
+   /* display: block; */
+}
+.img-container{
+  text-align: center;
+}
+.alone-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vertical-alight img{
+
+}
+.vertical-alight span{
+background-color: yellow;
+line-height: 150px;
+display: inline-block;
+}

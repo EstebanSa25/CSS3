@@ -1,0 +1,31 @@
+.Contacto-container{
+    display: flex;
+    flex-direction: column;
+    @include desde($computadora){
+        flex-direction: row;
+    }
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 1em;
+    color: gray;
+}
+
+.Contacto-container__item{
+   width:100%;
+   @include desde($computadora){
+   margin-left: 10px;
+}
+   .titulo-escribenos{
+    border-bottom: 1px solid lightgray;
+   }
+   [class^="input"]{
+    width: 100%;
+    line-height: 1.7;
+    border: 1px solid rgba(17, 17, 17, 0.25);
+    margin-top: .5em;
+   }
+   .button-primary{
+    margin-top: 1.5em;
+   }
+}

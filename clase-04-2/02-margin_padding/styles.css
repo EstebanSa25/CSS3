@@ -1,0 +1,86 @@
+/* 
+Margin
+    El es espacio entre una caja y las adyacentes,son cuatro tipos de margenes:
+    margin-top:(1)
+    margin-right:(2)
+    margin-bottom:(3)
+    margin-left:(4)
+Tambien se puede escribir con un shorthand
+margin:1em(1,2,3,4)
+margin:1em(1,3)2em(2,4)
+margin:1em() 2em(2,3) 3em(3)
+MARGIN :1em(1) 2em(2) 3em(3) 4em(4)
+
+Tips:
+1.Comienza desde arriba
+2.Avanza en sentido de las agujas del reloj
+3.Si un elemento no tiene valor toma el de su opuesto
+*/
+.div1{
+    margin: 1em 1.5em;
+    /* margin-top:1em 
+    margin right:1.5em
+    margin:bottom:1em;
+    margin-left:1.5em;
+    */
+}
+.div2{
+    margin: 1em auto 1.5em;
+    /* margin-top: 1em;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    margin-left: auto; */
+}
+
+/* 
+TIPS
+1.Puedes usar margenes negativos para mover elementos.
+2.Puedes usar magin-left:auto; y margin-right:auto para centrar elementos de bloque con ancho definido
+*/
+
+/* 
+COLAPSADO DE MARGENES VERTICALES(CAJAS ADYACENTES)
+*Cuando hay margenes verticales que se superponen el mayor siempre absorbe al menor.
+COLAPSADO DE MARGENES VERTICALES 2(PADRE HIJO)
+*El margen vertical del hijo se escapa del padre.para solucionarlo(en el padre)
+    1.padding
+    2 overflow:hidden;
+    3 float:right|left;(no recomendado)
+*/
+[class^="box"]{
+background-color: red;
+width: 200px;
+height: 200px;
+}
+.box1{
+    margin-bottom: 2em;
+}
+.box2{
+    margin-top: 1em;
+}
+.padre{
+    background-color: yellow;
+    padding-top: 1px;
+}
+.hijo{
+    margin-top: 2em;
+}
+/* 
+Padding 
+    Es la separacion entre el contenido y el limite de la caja
+    padding-top:
+    padding-bottom:
+    padding-left:
+    padding-right:
+    padding:
+
+    Tips
+    1.Los paddings no colapsan
+    2.No hay paddings negativos
+    3.Los paddings con porcentaje pueden usarse para crear cajas con una proporcion
+
+*/
+.ratio{
+    background-color: red;
+    padding-bottom: 50%;
+}

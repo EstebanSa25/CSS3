@@ -1,0 +1,66 @@
+/* 
+Border
+El concepto de border esta dividivo en varias propiedades del tipo:
+
+border-top-width:
+border-bottom-style:
+border-left-color:
+
+Entonces existen 4 "parametros" para definir un 
+borde:
+    color
+    width
+    style(tipo)
+    posicion(top,left...)
+    Sobre la posicion se pueden usar los mismos principios usados en margin y padding
+    Entonces:
+    border-color:green;
+    border-style:solid dashed;
+    border-width:3px 5px 2px
+*/
+[class^="border"]{
+    background-color: yellow;
+    height: 50px;
+    margin-bottom: 2em;
+}
+.border1{
+border-color: green;
+border-style: solid dashed;
+border-width: 3px 5px 2px;
+}
+
+/* 
+Existen shorthand para cada posicion:
+border-top:
+border-bottom:
+border-left:
+border-right:
+    Sus valores:
+    width style color
+*/
+.border2{
+border-top: 2px solid red;
+border-bottom: 3px dashed green;
+}
+/* 
+El shorthand border se aplica a los cuatro lados
+border:width style color:
+*/
+/* 
+Border-radius
+Forma indiviual
+border-bottom-left-radius:x y;
+border-bottom-right-radius: x y;
+
+El valor de x es el radio en horizontal
+El valor de y es el radio en vertical
+
+el shorhand de border-radius funciona igual que el de margin para las posiciones con la diferencia que se empieza a contar en la esquina superior izquierda
+*/
+.border3{
+    /*border-top-left-radius:10px 20px ;
+    */
+    /* border-radius: 50%; */
+    border: 1px solid black;
+   
+}

@@ -1,0 +1,27 @@
+/* 
+Los degradados permiten poner como fondo varios colores.
+Existen 2 tipos
+    lINEALES
+    CIRCULARES
+Los degradados se consideran background-image
+
+La sintaxis es 
+    "entre parentesis van los colores separados por comas"
+Tambien se puede definir una palabra para cada color
+    background-image: linear-gradient(yellow 50%, 50%);
+
+Para poner un angulo se pone al inicio,antes del primer color en deg
+*/
+[class$="-gradient"]{
+    width: 400px;
+    height: 250px;
+    border: 2px solid black;
+    margin: 1em auto;
+}
+.linear-gradient{
+/* background-image: linear-gradient(yellow,red); */
+background-image: linear-gradient(50deg,yellow 50%,red 50%);
+}
+.radial-gradient{
+    background-image: radial-gradient(yellow,red);
+}

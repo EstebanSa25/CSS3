@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/introduccion/styles.css">
+    <link rel="stylesheet" href="../general.css">
+</head>
+<body>
+<h1>Flexbox</h1>
+<p>Es un modelo de layout que requiere la relacion de un contenedor
+    (llamado flex-container) y de sus hijos directos
+    (llamados flex-items) de esta manera el flex-container
+    define un contexto respecto al cual los flex-items van a organizarse
+    y calcular sus dimensiones
+</p>
+<pre>
+&lt;div class="papa"&gt;
+    &lt;div class="hijo"&gt;&lt;/div&gt;
+    &lt;div class="hijo"&gt;&lt;/div&gt;
+    &lt;div class="hijo"&gt;&lt;
+        &lt;div class="nieto&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<p>En el ejemplo anterior,<code>flex-item--child</code> no se considera
+un flex-item porque ellos son solo los "hijos directos" del flex-container</p>
+<p>Un flex item podria a su vez ser un flex-container.
+    Se define un flex-container con la propiedad siguiente:
+</p>
+<p>Sin embargo,un flex item podria a su vez ser un flex container y asi sucesivamente</p>
+<p>.hijo{
+   display:flex; }</p>
+<pre>display:flex;</pre>
+<p>Ejemplo (item y container a la vez)</p>
+<pre>.container{
+    display:flex;
+}
+.container >.item{
+    display:flex;
+}
+</pre>
+</body>
+</html>

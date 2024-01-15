@@ -1,0 +1,104 @@
+/* 
+LISTAS
+
+Existen tres propiedades para las listas (se pueden aplicar a los <li></li> o tambien
+a los <ul>,<ol>)
+
+    list-style-position
+        outside(default)|inside 
+
+    list-style-type
+        disc
+        circle
+        square
+        decimal
+        decima-leading zero
+        lower-alpha
+        lower-roman
+        lower-latin
+        lower-greek
+        upper-roman
+        upper-latin
+    list-style-imagen
+    a travez de la funncion url muestra una imagen en 
+    lugar de la vi;eta
+     (no recomendado se prefieren pseudo elementos o
+     background-image
+    Ademas,existen un shorthand
+    list-style
+
+    TIP:
+        Las listas <ul> <ol> tienen las siguientes propiedades asignadas 
+        por el navegador:
+        margin-top
+        margin-bottom
+        padding-left
+    Es recomendable para menus poner todas estas propiedades en cero
+    
+    .menu{
+        margin-top:0;
+        margin-bottom:0;
+        padding-left:0;
+        list-style:none;
+    }
+*/
+
+.list{
+    border: 1px solid black;
+    list-style-type: upper-roman;
+    /* list-style-position: inside; */
+    /* list-style-image: url(services.png); */
+}
+.list li{
+    background: lightblue;
+    margin-bottom: .5em;
+}
+/* .list li::before{
+content: "";
+display: inline-block;
+width: 1em;
+height: 1em;
+background: url(services.png) 0 0/contain;
+vertical-align: middle;
+} */
+/* .list li {
+    margin-bottom: .5em;
+    background: url(services.png) 0 0/contain no-repeat;
+    padding-left: 1.6em;
+} */
+
+/* 
+Construir un menu de navegacion
+*/
+.main-menu{
+    margin-top:0;
+    margin-bottom:0;
+    padding-left:0;
+    list-style:none;
+    background-color: teal;
+    display: table;
+}
+.main-menu__item{
+float: left;
+}
+.main-menu__link{
+text-decoration: none;
+color: #fff;
+line-height: 2.5;
+padding: 0 1em;
+}
+.main-menu__item:hover{
+    background-color: rgba(0, 0, 0, .3);
+    }
+    .main-menu--child{
+    position: absolute;
+    width: 8em;
+    display: none;
+    }
+    .main-menu__item--child{
+        float: none;
+    }
+    /* Mostrar submenu */
+    .main-menu__item:hover>.main-menu--child{
+        display: block;
+    }

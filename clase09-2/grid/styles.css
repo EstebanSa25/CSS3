@@ -1,0 +1,19 @@
+main{
+    background-color: tomato;
+}
+aside{
+    background-color: lightgreen;
+}
+footer{
+    background-color: steelblue;
+    -ms-grid-row: 5;
+}
+header{
+    background-color: gold;
+}
+body{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns:200px 10px 400px;
+    -ms-grid-rows: 100px 10px 300px 10px 100px ;
+}

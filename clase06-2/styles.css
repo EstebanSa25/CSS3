@@ -1,0 +1,204 @@
+/* 
+Modelo de layout (layout model)
+Es el conjunto de algoritmos por los que el navegador posiciona
+elementos en la pantalla y los relaciona con la posicion de los demas
+
+Las siguientes propiedades son parte del layout model:
+    *display
+    *position
+    *float
+    *margin
+
+2.Position
+Es una propiedad que permite posicionar un elemento en cualquier lugar
+especifico de la pantalla.
+valores:
+    static      (no posicionado)
+    relative    (posicionado)
+    abosolute   (posicionado)
+    fixed       (posicionado)
+    valores experimentales
+        sticky
+        page
+        center
+Un elemento con position:static no se considera posicionado
+por que su ubicacion la que corresponde por el flujo
+
+3. el flujo es la secuencia de aparicion de los elementos
+en el navegador.Esta secuencia coincide con el codigo.
+cuando alteramos esta secuencia estamos 
+rompiendo el flujo(lo hacemos siempre al construir layout)
+
+4.ELEMENTOS POSICIONADOS
+Se considera posicionado a un elemento con la propiedad posicion
+y cualquiera de los valores siguientes:
+    relative
+    absolute
+    fixed
+    
+Desde el momento que en un elemento esta posicionado tiene la capacidad
+de moverse en un los tres ejes (x,y,z).
+
+Propiedades offset(x,y)
+    top,bottom (y)
+    right,left (x)
+Propiedad para el eje z
+    z-index
+
+*El eje Z determina el apilamiento de las capas(es decir
+cual va encima o debajo cuando estas se superponen)
+Por definiion:
+1.Un elemento esta por encima de los que vinene detras en el codigo
+
+2.Un elemento esta por encima de sus ancestros
+
+5.POSICION INICIAL DE LOS ELEMENTOS POSICIONADOS
+Donde se posiciona un elemento posicionado
+(sin moverlo manualmente en los ejes)
+Inicialmente los elementos posicionados no se mueven(salvo
+que los movamos con offset)
+
+6.CONTEXTO DE UN ELEMENTO POSICIONADO
+Es un area que define desde donde se contaran
+los offset(top,left,right,bottom).
+    relative:su posicion inicial
+    fixed:el viewport
+    absolute:su ancestro posicionado mas cercano(si no hay ninguno 
+    toma al viewport)
+
+7.DIMENSIONES DE LOS ELEMENTOS POSICIONADOS
+    *Si un elemento posicionado tenia ya una dimensiones declaradas
+    conservara sus dimensiones
+    *Si no tenia dimensiones declaradas se ajustara a su contenido
+    (para absolute y fixed)
+    Si no tenia dimensiones declaradas y es relative,conserva sus dimensiones
+    iniciales
+
+8.ESPACIO EN EL FLUJO
+    relative
+        conserva su espacio al moverse
+    absolute y fixed
+        pierden su espacio en el flujo
+
+9.CONTROLAR EL APILAMIENTO
+    La propiedad z-index determina que elemento aparece arriba o debajo
+    sus valores son numeros que pueden ser positivos o negativos,
+    a mayor numero mas arriba en el apilamiento
+
+    *Un hijo solo puede estar detras de su padre si es que tiene z-index negativo
+    y el padre no tiene un z-index declarado
+*/
+/* h1{
+    position: absolute;
+    top: 2em;
+} */
+*{
+    box-sizing: border-box;
+}
+/* div{
+    height: 50px;
+} */
+.div1{
+background-color: yellow;
+margin-bottom: 1em;
+z-index: 50;
+}
+.div2{
+background-color: green;
+margin-top: -3em;
+}
+.parrafo{
+    /* background-color: yellow; */
+    /* position: absolute; */
+    margin-bottom: 1em;
+}
+.p-container{
+    border: 2px solid black;
+    background-color: yellow;
+    padding: 2em;
+    background-clip: content-box;
+}
+.p-content{
+    border: 2px solid black;
+    margin: 0;
+    position: relative;
+    top: 20px;
+    /* left: 200px; */
+}
+body{
+    padding-bottom: 100em;
+    margin: 0;
+}
+.main-footer{
+    background-color: steelblue;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+   bottom: 0;
+   padding-top: 1em;
+   padding-bottom: 1em;
+   text-align: center;
+}
+.p-container2{
+    border: 2px solid black;
+    margin-top: 3em;
+    padding: 1em;
+    position: relative;
+}.p-content2{
+    background-color: yellow;
+    /* position: absolute; */
+    top: 10px;
+}
+.posicionado{
+    background-color: tomato;
+    position:absolute;
+}
+.p-content2 span{
+    background-color: orange;
+    position: absolute;
+    top: 100px;
+}
+.z-index{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    margin: 4em auto;
+    position: relative;
+}
+[class^="item-"]{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    line-height:200px ;
+    text-align: center;
+    font-size: 3em;
+}
+.item-1{
+    background-color: pink;
+    top: 50px;
+    left: 50px;
+    z-index: 10;
+}
+.item-2{
+    background-color: teal;
+    top: 150px;
+    left: 150px;
+    /* z-index: 1.1; */
+}
+.item-3{
+    background-color: gold;
+    top: 250px;
+    left: 250px;
+    /* z-index: -10; */
+}
+.item-3 span{
+    background-color: red;
+    width: 100px;
+    height:100px ;
+    display: block;
+    line-height: 100px;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    z-index: -1;
+}

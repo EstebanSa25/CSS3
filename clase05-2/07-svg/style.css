@@ -1,0 +1,34 @@
+.vector{
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+    margin: auto;
+    display: block;
+}
+/* 
+Los vectores no aplican en todos los casos las mimas propiedades
+que el css tradicional
+fill:equivalente a background
+stroke equivalente a border-color
+stroke-widht equivalente a border-with
+stroke-dasharray indica la separacion del trazo
+stroke-dashoffset permite mover el inicio del trazo
+*/
+circle{
+    background-color: red;
+    fill: red;
+    stroke: green;
+    stroke-width: 10px;
+    stroke-dasharray: 628px;
+    stroke-dashoffset: 50;
+    animation: borde 2s linear;
+    -webkit-animation: borde 2s linear infinite;
+}
+@keyframes borde{
+    from{
+        stroke-dashoffset: -628px;
+    }
+    to{
+stroke-dashoffset: 50px;
+    }
+}

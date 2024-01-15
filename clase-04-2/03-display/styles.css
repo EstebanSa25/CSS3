@@ -1,0 +1,66 @@
+/* 
+Display es una propiedad que define como se comportara una caja.De forma predeterminada existen dos elementos:
+
+block-level
+inline-level
+
+los elementos inline:
+    1.No aceptan widht y height
+    2.Aceptan margen y padding pero no altera el flujo
+*/
+.inline{
+    background-color: yellow;
+    width: 100px;
+    height: 50px;
+    padding: 1em;
+    margin: 1em;
+    /* display: inline-block; */
+}
+.block{
+    background-color: pink;
+    width: 500px;
+    height: 50px;
+    /* display: inline */
+}
+/* 
+Valores de display:
+    inline(default)
+    inline-block
+        A un elemento le da las propiedades de un elemento inline y block
+    table
+        Imita el layout de una tabla
+        Table-cell
+        table-caption
+        table-header-group
+        table-footer-group
+    none
+
+    CSS3:
+    flex
+    grid
+*/
+
+.table{
+display: table;
+}
+.cell{
+    display: table-cell;
+}
+.cell:nth-child(even){
+background-color: pink;
+}
+.cell:nth-child(odd){
+    background-color: yellow;
+    }
+.caption{
+display: table-caption;
+}
+.footer{
+    display: table-footer-group;
+}
+
+/* 
+Display:none
+desaparece un elemeno del flujo
+igual se renderiza el elemento y sus assets
+*/

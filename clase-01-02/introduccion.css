@@ -1,0 +1,28 @@
+/* 
+COMO VINCULAR HTML CON CSS
+    Exsisten 4 metodos:
+    1.<link>
+    El elemento link coneta al HTML con un recurso externo.
+    La sintaxis para conectar CSS es (recomendable en el head)
+    <link rel="stylesheet" href="ruta/archivo.css">
+    2.<style>
+    3.@import
+    4.style=""
+*/
+body{
+    background-color: green;
+}
+h1{
+    color: pink;
+}
+
+/* 
+ESPECIFICIDAD
+
+4 PILARES DE CSS
+    *SELECTORES
+    *HERENCIA
+    *CASCADA
+    *ESPECIFICIDAD
+*/
+

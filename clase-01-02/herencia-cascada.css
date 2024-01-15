@@ -1,0 +1,32 @@
+/* 
+Herencia
+La herencia significa que elementos ancestros heredan algunas propiedades
+a sus descendientes genralmente estilos como fuentes,colores etc mientras que estilos 
+de layout por lo general no se heredan.
+*/
+
+h1{
+    color: red;
+}
+p{
+    color: green;
+}
+/* 
+La CASCADA
+La cascada viene del nombre de CSS (cascade style sheet) y signifca 
+que los estilos que vienen en ultimo lugar sobreescriben a los que estan antes.
+
+p{
+color:red;
+color:green;
+}
+
+Se usa mucho las cascada para crear fallbacks para navegadores viejos
+
+p{
+    backgound:red;
+    background-linear-gradient(red,yellow);
+}
+La cascada se aplica cuando se inserta css con link o @import
+*/
+

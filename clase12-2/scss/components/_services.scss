@@ -1,0 +1,30 @@
+//Contenedor para cada .service
+.services{
+@include desde ($medium){
+    display: flex;
+}
+}
+.service{
+    background: $color1;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    @include desde ($medium){
+        flex: 1 1 33.33%
+    }
+    @include desde($large){
+        height:  15em;
+    }
+    &:nth-child(2){
+        background: $color2;
+    }
+    &:nth-child(3){
+        background: $color3;
+        color: $color1;
+    }
+    &__title{
+        margin: 0;
+    }
+}

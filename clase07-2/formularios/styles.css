@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background:linear-gradient(
+       220deg, purple,rgba(0,0,0,.8)
+    );
+    min-height: 100vh;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+.login-form{
+    width: 50%;
+    background: rgba(255, 2555, 255, .2);
+    margin: auto;
+    padding: 2em 1em;
+}
+.login-form label{
+    position: relative;
+    top: 1.5em;
+    left: 1em;
+    font-style: italic;
+    opacity: .7;
+}
+.login-form__input{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    line-height: 2.5;
+    padding: 0 1em;
+    border-radius: .5em;
+    background: #bebaba;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
+    border: none;
+}
+.login-form__submit{
+    display: block;
+    width: 100%;
+    background-color: teal;
+    color: #fff;
+    line-height: 2.5;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.login-form__forgot{
+    text-align: center;
+    display: block;
+    padding-top: 1.5em;
+    color: #fff;
+    text-decoration: none;
+}
+.login-form__submit:hover{
+  background-color:   #005252;
+  border: none;
+}
+
+/* 
+Pseudo clases
+:focus(detecta cuando el cursos esta activo en un input)
+:checked(selecciona un input seleccionado(checkbox,radio) o un option de un select)
+:required
+:read-only
+:enabled
+:disabled
+*/
+.login-form__input:focus{
+    background-color: rgb(255, 255, 255);
+}
+.login-form__input:focus + label{
+    left: -100%;
+}

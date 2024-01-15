@@ -1,0 +1,86 @@
+/* 
+Los selectores indican a que elementos html apliar los estilos
+*/
+
+/* 
+Selectores de etiqueta
+Se aplican a elementos html.basta indicar el nombre de la etiqueta
+
+body{
+    color:red;
+}
+h1{
+    color:green;
+}
+*/
+body{
+    /* background-color: gray; */
+}
+/* 
+A los estilos aplicados a los selectores de etiquetas
+ se les conoce como estilos base(Metodologia SMACSS)
+*/
+
+
+/* 2.SELECTORES DE CLASE
+    Las clases son atributos de html se usan 
+    para manipular el html con css o js
+    
+    Para seleccionar una clase con css 
+    se usa un punto seguido del nombre de la clase
+
+        HTML
+            <p class="alerta">Ha sucedido un error</p>
+        CSS
+            .alerta{
+                backgound:red
+            }
+*/
+.alerta{
+    background-color: red;
+    color: white;
+}
+
+/* 
+3.SELECTORES DE ID
+    Se selecciona un ID con el simbolo #,y seguido del nombre del ID
+    Puesto que los ID son unicos en HTML no es recomendable
+    usar ID en el CSS.
+*/
+
+/* 
+<p class="mensaje"id=#inicial></p>
+*/
+
+/* 
+SELECTORES DESCENDIENTES
+
+    Se aplican a un elemento que sea siempre hijo de otro,su sintaxis es asi:
+
+    padre hijo{
+
+    }
+    no importa el nivel del hijo
+*/
+
+/* ul ul a {
+    color:  red;
+} */
+/*  Anidar selectores
+Consiste en separar selectores por comas de esta manera los estilos se le palican a todos los selectores
+ */
+ h1,p,ul{
+    font-size: 20px;
+ }
+
+ /* 
+ Selector de hijo directo:
+ Selecciona solo a los elementos que estan dentro directaMENTE DE OTRO ELEMENTO
+
+ padre>hijo{
+
+ }
+ */
+.menu>li>a{
+    color: green;
+ }

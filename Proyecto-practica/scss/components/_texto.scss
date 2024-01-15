@@ -1,0 +1,12 @@
+@mixin titulos($font-size,$color){
+font-style: $normal;
+font-size: $font-size;
+font-weight: bold;
+color: $color;
+}
+@mixin parrafos($font-size,$color,$estilo){
+    font-style: $normal;
+    font-size: $font-size;
+    font-weight: $estilo;
+    color: $color;
+    }

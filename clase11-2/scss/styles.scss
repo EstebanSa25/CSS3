@@ -1,0 +1,94 @@
+code{
+    display: block;
+    overflow: auto;
+    width: 100%;
+    padding: 1em;
+    background: rgba(lightblue,.5);
+    font-size: 1.4em;
+    color: #333;
+}
+// @media screen {
+//     body{
+//         background: #000;
+//         color: #fff;
+//     }
+// }
+// @media print{
+//     body{
+//         background: #fff;
+//         color:#333;
+//     }
+// }
+// @media all{
+//     body{
+//         font-family: Arial, Helvetica, sans-serif;
+//     }
+// }
+// @media print and (min-width:200px){
+//     body{
+//         color: red;
+//     }
+// }
+@media screen and (orientation:portrait){
+    //dispositivo en vertical
+}
+@media screen and (orientation:landscape){
+    //dispositivo en horizontal
+}
+
+// vp width:756px
+// @media screen and (min-width:400px){
+// body{
+//     background-color: red;
+//     color: yellow;
+// }
+// }
+// @media screen and (max-width:800px){
+//     body{
+//         background-color: green;
+//         color: #000;
+//     }
+//     }
+
+// @media screen and (min-width:400px) and (max-width:1000px){
+//     body{
+//         background-color: blue;
+//     }
+// }
+// body{
+//     background-color: red;
+//     @media screen and (min-width:400px){
+//         background-color: green;
+//     }
+//     @media screen and (min-width:700px){
+//         background-color: yellow;
+//     }
+//     @media screen and (min-width:1000px){
+//         background-color: purple;
+//     }
+// }
+@mixin desde($size){
+@media screen and (min-width:$size){
+    @content;
+}
+@mixin hasta($size){
+    @media screen and (max-width:$size){
+        @content;
+    }
+    }
+}
+@mixin desde-hasta($desde,$hasta){
+    @media screen and (min-width:$desde) and (max-width:$hasta){
+        @content;
+    }
+    }
+
+header{
+    background: red;
+    @include desde(400px){
+        background: yellow;
+    }
+    @include desde(800px){
+        background: green;
+    }
+}
